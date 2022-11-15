@@ -1,0 +1,16 @@
+<div class="container my-auto mt-5">
+  <div class="col">
+    <div class="row">
+      <ul>
+        <% @pets.each do |pet| %>
+          <li>
+            <%= link_to pet.name, pet_path(pet) %> | found <%= time_ago_in_words(pet.found_on) %> ago
+          </li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="row">
+      <%= link_to 'Declare a found pet', new_pet_path %>
+    </div>
+  </div>
+</div>
